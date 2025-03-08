@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permintaan Maaf Romantis</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <audio id="bgMusic" autoplay loop>
+        <source src="romantic_music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <div class="photo-frame">
+            <img src="foto.jpg" alt="Foto Kita" class="couple-photo">
+        </div>
+        <h1 class="title">💖 Untuk Sayangku 💖</h1>
+        <div class="apology-text">
+            <p>Febry sayang aku minta maaf yah. Clear semua masalah dan kembali ke jalan kita yah. Kita berjuang bersama
+                lagi</p>
+            <p>Kita perbaiki setiap ada kesalahan dan kekurangan yah sayang.</p>
+            <p>Kita ketemu yah hari minggu besok.</p>
+            <p class="meet-location">Mari bertemu di:<br><span>Taman Summarecon Mall Serpong</span></p>
+            <a href="https://maps.app.goo.gl/xZzGntD1e7JdePrF6" target="_blank" class="btn location-btn">
+                <i class="fas fa-map-marker-alt"></i> Lihat Lokasi
+            </a>
+        </div>
+
+        <div class="activity-buttons">
+            <button class="btn" id="udonBtn">
+                <i class="fas fa-utensils"></i> Makan Udon
+            </button>
+            <button class="btn" id="movieBtn">
+                <i class="fas fa-film"></i> Nonton Bareng
+            </button>
+            <button class="btn" id="shoppingBtn">
+                <i class="fas fa-shopping-bag"></i> Temani Belanja
+            </button>
+        </div>
+    </div>
+
+    <!-- Popup Notification -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <p id="popup-message"></p>
+        </div>
+    </div>
+
+    <!-- Animasi Hati -->
+    <div class="hearts">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <!-- Animasi Cincin -->
+    <div class="ring-animation" id="ringAnimation">
+        <img src="cincin.png" alt="Cincin" class="ring">
+        <p class="ring-message">💍 Untuk Kamu, Sayangku 💖</p>
+    </div>
+
+    <div class="message-box">
+        <p>Ada kah pesan buat aku? Tulis di sini yah 💌</p>
+        <textarea id="userMessage" placeholder="Tulis pesanmu di sini..."></textarea>
+        <button id="sendMessageBtn" class="btn">
+            <i class="fas fa-paper-plane"></i> Kirim Pesan
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

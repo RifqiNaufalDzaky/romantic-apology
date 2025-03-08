@@ -1,0 +1,412 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 100px;
+    /* Tambahkan padding-bottom */
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.photo-frame {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto;
+    border: 5px solid #ff69b4;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.couple-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title {
+    font-size: 2.5em;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.apology-text {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    backdrop-filter: blur(10px);
+    animation: slideUp 1.5s ease-in-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.meet-location span {
+    color: #ff69b4;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.activity-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    background: #ff69b4;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    animation: fadeInButtons 2s ease-in-out;
+}
+
+@keyframes fadeInButtons {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn:hover {
+    background: #ff1493;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+    color: #333;
+    animation: popupAnimation 0.3s ease-out;
+}
+
+@keyframes popupAnimation {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ff69b4;
+}
+
+/* Animasi Hati */
+.hearts {
+    position: fixed;
+    /* Ubah dari absolute ke fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+    /* Agar hati tidak mengganggu interaksi */
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    background: #ff69b4;
+    width: 20px;
+    height: 20px;
+    transform: rotate(-45deg);
+    animation: floatHearts 5s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff69b4;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 10px;
+}
+
+@keyframes floatHearts {
+    0% {
+        transform: translateY(0) rotate(-45deg);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    .btn {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+
+    .photo-frame {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .apology-text {
+        font-size: 0.9em;
+    }
+
+    .meet-location span {
+        font-size: 1em;
+    }
+}
+
+/* Style untuk tombol lokasi */
+.location-btn {
+    margin-top: 15px;
+    background: #ff69b4;
+    text-decoration: none;
+    display: inline-block;
+    width: auto;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.location-btn:hover {
+    background: #ff1493;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+}
+
+/* Animasi Cincin */
+.ring-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    /* Pastikan di atas semua elemen */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.ring-animation.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ring {
+    width: 100px;
+    height: 100px;
+    animation: floatRing 3s ease-in-out infinite;
+}
+
+@keyframes floatRing {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.ring-message {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2em;
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+    animation: fadeInMessage 2s ease-in-out;
+}
+
+@keyframes fadeInMessage {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Style untuk message box */
+.message-box {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.message-box p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.message-box textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #ff69b4;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2em;
+    resize: none;
+    margin-bottom: 15px;
+}
+
+.message-box textarea::placeholder {
+    color: #888;
+}
+
+.message-box textarea:focus {
+    outline: none;
+    border-color: #ff1493;
+}
