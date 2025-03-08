@@ -69,3 +69,20 @@ sendMessageBtn.addEventListener('click', () => {
     }
 });
 
+// Fungsi untuk mengirim pesan ke WhatsApp
+sendMessageBtn.addEventListener('click', () => {
+    const message = userMessage.value.trim(); // Ambil pesan dari input
+
+    if (message) {
+        // Format nomor WhatsApp (gunakan format internasional)
+        const phoneNumber = '6281321219618'; // Ganti dengan nomor Anda
+        const encodedMessage = encodeURIComponent(message); // Encode pesan untuk URL
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+        // Buka link WhatsApp di tab baru
+        window.open(whatsappUrl, '_blank');
+    } else {
+        alert('Tulis pesan dulu yah! 💌'); // Tampilkan alert jika input kosong
+    }
+});
+
